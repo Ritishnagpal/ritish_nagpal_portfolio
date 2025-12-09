@@ -964,16 +964,376 @@
         .fa-paper-plane::before { content: "✈"; }
         .fa-external-link-alt::before { content: "🔗"; }
         
+        /* Responsive Design */
+        
+        /* Large Tablets and Small Laptops (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .typing-text { font-size: 1.5rem; }
+            .section { padding: 80px 20px; }
+            .section-title { font-size: 2.5rem; }
+            .about-content { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+            .about-text { text-align: left; }
+            .profile-card { max-width: 400px; margin: 0 auto; }
+            .skills-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+            .projects-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 25px;
+            }
+            .contact-container { 
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .navbar {
+                padding: 12px 25px;
+                top: 15px;
+            }
+            .navbar ul { gap: 20px; }
+            .navbar a { 
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Tablets (481px - 768px) */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .typing-text { font-size: 1.2rem; }
-            .about-content { grid-template-columns: 1fr; text-align: center; }
-            .contact-container { grid-template-columns: 1fr; }
-            .navbar ul { gap: 15px; }
-            .cta-buttons { flex-direction: column; align-items: center; }
-            .experience-timeline { padding-left: 20px; }
-            .experience-item:hover { transform: translateX(0); }
-            .projects-grid { grid-template-columns: 1fr; }
+            .hero {
+                min-height: 90vh;
+                padding: 0 15px;
+            }
+            .hero h1 { 
+                font-size: 2.8rem;
+                margin-bottom: 15px;
+            }
+            .typing-text { 
+                font-size: 1.3rem;
+                min-height: 60px;
+            }
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+            }
+            .section { 
+                padding: 60px 15px;
+            }
+            .section-title { 
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            .about-content { 
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-text {
+                text-align: center;
+            }
+            .about-text p {
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+            .profile-card {
+                max-width: 350px;
+                margin: 0 auto;
+                padding: 30px;
+            }
+            .profile-avatar {
+                width: 130px;
+                height: 130px;
+            }
+            .skills-grid { 
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .skill-card {
+                padding: 25px;
+            }
+            .skill-icon {
+                font-size: 2.5rem;
+            }
+            .skill-title {
+                font-size: 1.3rem;
+            }
+            .experience-timeline { 
+                padding-left: 30px;
+            }
+            .experience-timeline::before {
+                left: 15px;
+            }
+            .experience-item {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .experience-item::before {
+                left: -29px;
+                top: 20px;
+                width: 14px;
+                height: 14px;
+            }
+            .experience-item:hover { 
+                transform: translateX(10px);
+            }
+            .experience-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .experience-title {
+                font-size: 1.2rem;
+            }
+            .experience-company {
+                font-size: 1rem;
+            }
+            .projects-grid { 
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .project-card {
+                max-width: 100%;
+            }
+            .project-header {
+                padding: 25px;
+            }
+            .project-title {
+                font-size: 1.3rem;
+            }
+            .project-content {
+                padding: 25px;
+            }
+            .contact-container { 
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .contact-item {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            .contact-details h3 {
+                font-size: 1.1rem;
+            }
+            .contact-details p {
+                font-size: 0.95rem;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            .social-link {
+                width: 100%;
+                height: 55px;
+            }
+            .navbar {
+                width: 90%;
+                padding: 10px 15px;
+                top: 10px;
+            }
+            .navbar ul { 
+                gap: 8px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .navbar a { 
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+            .cta-buttons { 
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+                width: 100%;
+                max-width: 350px;
+                margin: 30px auto 0;
+            }
+            .btn {
+                padding: 15px 25px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Devices (320px - 480px) */
+        @media (max-width: 480px) {
+            .hero {
+                min-height: 85vh;
+                padding: 0 10px;
+            }
+            .hero h1 { 
+                font-size: 2rem;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
+            .typing-text { 
+                font-size: 1rem;
+                min-height: 50px;
+                margin-bottom: 20px;
+            }
+            .hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+                line-height: 1.6;
+            }
+            .section { 
+                padding: 50px 10px;
+            }
+            .section-title { 
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+            }
+            .about-content {
+                gap: 20px;
+            }
+            .profile-card {
+                padding: 20px;
+                max-width: 100%;
+            }
+            .profile-avatar {
+                width: 110px;
+                height: 110px;
+                font-size: 3rem;
+            }
+            .about-text p {
+                font-size: 0.9rem;
+                margin-bottom: 12px;
+            }
+            .skill-card {
+                padding: 20px;
+            }
+            .skill-icon {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            .skill-title {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+            .skill-tag {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            .experience-timeline { 
+                padding-left: 25px;
+            }
+            .experience-timeline::before {
+                left: 10px;
+            }
+            .experience-item {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .experience-item::before {
+                left: -24px;
+                top: 15px;
+                width: 12px;
+                height: 12px;
+            }
+            .experience-title {
+                font-size: 1rem;
+            }
+            .experience-company {
+                font-size: 0.9rem;
+            }
+            .experience-date {
+                font-size: 0.8rem;
+            }
+            .project-header {
+                padding: 20px;
+            }
+            .project-title {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            .project-tech {
+                font-size: 0.85rem;
+            }
+            .project-content {
+                padding: 20px;
+            }
+            .project-description {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 10px;
+            }
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            .contact-details h3 {
+                font-size: 1rem;
+            }
+            .contact-details p {
+                font-size: 0.85rem;
+                word-break: break-word;
+            }
+            .social-links {
+                gap: 12px;
+            }
+            .social-link {
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            .navbar {
+                width: 95%;
+                padding: 8px 10px;
+                border-radius: 30px;
+            }
+            .navbar ul { 
+                gap: 5px;
+            }
+            .navbar a { 
+                padding: 6px 8px;
+                font-size: 0.75rem;
+            }
+            .cta-buttons {
+                max-width: 100%;
+                gap: 12px;
+            }
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                gap: 8px;
+            }
+            .contact-form-placeholder {
+                padding: 40px 15px !important;
+            }
+            .contact-form-placeholder h3 {
+                font-size: 1.2rem;
+            }
+            .contact-form-placeholder p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Devices (< 320px) */
+        @media (max-width: 320px) {
+            .hero h1 { 
+                font-size: 1.6rem;
+            }
+            .typing-text { 
+                font-size: 0.9rem;
+            }
+            .section-title { 
+                font-size: 1.4rem;
+            }
+            .navbar a { 
+                padding: 5px 6px;
+                font-size: 0.7rem;
+            }
         }
     </style>
 </head>
@@ -1215,7 +1575,8 @@
                 <p>Gurgaon, Haryana, India</p>
             </div>
         </a>        
-               <div class="social-links">
+              
+          <div class="social-links">
     <a href="https://www.linkedin.com/in/ritish-nagpal/" 
        class="social-link linkedin" 
        target="_blank" 
@@ -1508,6 +1869,7 @@
 </body>
 
 </html>
+
 
 
 
