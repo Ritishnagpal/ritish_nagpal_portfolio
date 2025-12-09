@@ -914,11 +914,123 @@
         .social-link.email:hover {
             background: linear-gradient(45deg, #ea4335, #fbbc04);
         }
+        
 
         @keyframes slideDown {
             from { transform: translateX(-50%) translateY(-100px); opacity: 0; }
             to { transform: translateX(-50%) translateY(0); opacity: 1; }
         }
+
+        /* 3D Phone Mockup */
+.phone-mockup {
+    position: relative;
+    animation: slideInRight 1s ease-out, float 6s ease-in-out infinite 1s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px) rotateY(-30deg); }
+    to { opacity: 1; transform: translateX(0) rotateY(0); }
+}
+
+.phone-frame {
+    width: 320px;
+    height: 650px;
+    background: linear-gradient(145deg, #1a1a2e, #0f0f1e);
+    border-radius: 45px;
+    padding: 12px;
+    box-shadow: 
+        0 50px 100px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    transform: rotateY(-15deg) rotateX(5deg);
+    transition: transform 0.3s ease;
+}
+
+.phone-frame:hover {
+    transform: rotateY(-10deg) rotateX(2deg) scale(1.02);
+}
+
+.phone-notch {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 28px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a0b2e, #2d1b4e);
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+}
+
+.app-content {
+    padding: 50px 20px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: contentSlide 3s ease-in-out infinite;
+}
+
+@keyframes contentSlide {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+}
+
+.app-header {
+    background: rgba(0, 245, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 15px;
+    animation: cardPulse 2s ease-in-out infinite;
+}
+
+@keyframes cardPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.app-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #00d4ff, #5a67d8);
+    border-radius: 10px;
+    margin: 10px 0;
+    animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+    0% { width: 30%; }
+    50% { width: 80%; }
+    100% { width: 30%; }
+}
+
+/* Responsive adjustments for phone mockup */
+@media (max-width: 1024px) {
+    .phone-mockup {
+        display: none;
+    }
+}
 
         @keyframes fadeInUp {
             from { transform: translateY(50px); opacity: 0; }
@@ -1383,25 +1495,53 @@
     <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <div class="about-image">
-                <div class="profile-card">
-                    <div class="profile-avatar">
-                        <img src="https://i.postimg.cc/SNK5jyp6/9f965d03-8f77-4854-8ba4-9f20fbbbfa58-1.jpg" alt="Ritish Nagpal" crossorigin="anonymous" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="profile-avatar-placeholder" style="display: none;">
-                            <i class="fab fa-flutter"></i>
-                        </div>
-                    </div>
-                    <h3>Flutter Developer</h3>
+    <div class="about-image">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <img src="https://i.postimg.cc/SNK5jyp6/9f965d03-8f77-4854-8ba4-9f20fbbbfa58-1.jpg" alt="Ritish Nagpal" crossorigin="anonymous" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-avatar-placeholder" style="display: none;">
+                    <i class="fab fa-flutter"></i>
                 </div>
             </div>
-            <div class="about-text">
-                <p>I'm a passionate Flutter Developer with over 2 years of experience in creating stunning cross-platform mobile applications. My journey began with a Bachelor's degree in Computer Application from Chitkara Institute, where I discovered my love for mobile development.</p>
-                
-                <p>I specialize in building user-centric applications that provide seamless experiences across iOS and Android platforms. From e-commerce solutions to talent management platforms, I've worked on diverse projects that have honed my skills in Flutter, Dart, Firebase, and backend integration.</p>
-                
-                <p>When I'm not coding, you'll find me exploring the latest Flutter packages, contributing to open-source projects, or brainstorming the next big app idea. I believe in writing clean, maintainable code and staying updated with the latest technology trends.</p>
+            <h3>Flutter Developer</h3>
+        </div>
+        
+        <!-- 3D Phone Mockup -->
+        <div class="phone-mockup" style="margin-top: 40px;">
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="app-content">
+                        <div class="app-header">
+                            <div style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 5px;">Flutter App</div>
+                            <div style="font-size: 1.1rem; font-weight: 600;">Dream Catchers</div>
+                        </div>
+                        <div class="app-card">
+                            <div style="font-size: 0.8rem; color: #b0b0b0; margin-bottom: 5px;">Talent Management</div>
+                            <div class="app-bar"></div>
+                        </div>
+                        <div class="app-card">
+                            <div style="font-size: 0.8rem; color: #b0b0b0; margin-bottom: 5px;">Location Services</div>
+                            <div class="app-bar" style="animation-delay: 0.5s;"></div>
+                        </div>
+                        <div class="app-card">
+                            <div style="font-size: 0.8rem; color: #b0b0b0; margin-bottom: 5px;">Calendar Integration</div>
+                            <div class="app-bar" style="animation-delay: 1s;"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+    
+    <div class="about-text">
+        <p>I'm a passionate Flutter Developer with over 2 years of experience in creating stunning cross-platform mobile applications. My journey began with a Bachelor's degree in Computer Application from Chitkara Institute, where I discovered my love for mobile development.</p>
+        
+        <p>I specialize in building user-centric applications that provide seamless experiences across iOS and Android platforms. From e-commerce solutions to talent management platforms, I've worked on diverse projects that have honed my skills in Flutter, Dart, Firebase, and backend integration.</p>
+        
+        <p>When I'm not coding, you'll find me exploring the latest Flutter packages, contributing to open-source projects, or brainstorming the next big app idea. I believe in writing clean, maintainable code and staying updated with the latest technology trends.</p>
+    </div>
+</div>
     </section>
 
     <!-- Skills Section -->
@@ -1869,6 +2009,7 @@
 </body>
 
 </html>
+
 
 
 
