@@ -859,12 +859,18 @@
             border-radius: 20px;
             transition: all 0.4s ease;
             position: relative;
+            text-decoration: none;
         }
 
         .contact-item:hover {
             background: rgba(0, 212, 255, 0.05);
             transform: translateX(10px);
             box-shadow: 0 15px 35px rgba(0, 212, 255, 0.1);
+            text-decoration: none;
+        }
+
+        .contact-item, .contact-item * {
+            text-decoration: none !important;
         }
 
         .contact-details h3 {
@@ -1229,11 +1235,17 @@
                 height: 60px;
                 font-size: 1.5rem;
             }
+            
             .contact-details h3 {
-                font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: #fffdfd;
+            margin-bottom: 5px;    
             }
+            
             .contact-details p {
                 font-size: 0.95rem;
+                color: #fffdfd;
+                font-weight: 500;
             }
             .social-links {
                 flex-direction: column;
@@ -2009,6 +2021,7 @@
 </body>
 
 </html>
+
 
 
 
